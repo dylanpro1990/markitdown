@@ -68,6 +68,18 @@ cd markitdown
 pip install -e 'packages/markitdown[all]'
 ```
 
+To install the optional local drag-and-drop app as well:
+
+```bash
+pip install -e 'packages/markitdown[all,app]'
+```
+
+To install the optional Windows desktop app dependencies:
+
+```bash
+pip install -e 'packages/markitdown[all,desktop-app]'
+```
+
 ## Usage
 
 ### Command-Line
@@ -87,6 +99,32 @@ You can also pipe content:
 ```bash
 cat path-to-file.pdf | markitdown
 ```
+
+### Local Drag-and-Drop App
+
+If you prefer a simple UI, install the optional app dependency and run:
+
+```bash
+markitdown-app
+```
+
+This starts a local browser app where you can drag files in, convert them to Markdown, preview the results, and download the generated `.md` files.
+
+### Windows Portable Desktop App
+
+For a desktop-style app instead of a browser UI:
+
+```bash
+markitdown-desktop
+```
+
+To build a portable Windows release directory:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build_portable.ps1
+```
+
+This creates `dist/MarkItDownPortable/`, which can be copied to another Windows machine and launched by double-clicking `MarkItDownPortable.exe`.
 
 ### Optional Dependencies
 MarkItDown has optional dependencies for activating various file formats. Earlier in this document, we installed all optional dependencies with the `[all]` option. However, you can also install them individually for more control. For example:

@@ -46,6 +46,7 @@ all = [
   "pydub",
   "SpeechRecognition",
   "youtube-transcript-api~=1.0.0",
+  "yt-dlp",
   "azure-ai-documentintelligence",
   "azure-identity",
 ]
@@ -56,8 +57,10 @@ xls = ["pandas", "xlrd"]
 pdf = ["pdfminer.six>=20251230", "pdfplumber>=0.11.9"]
 outlook = ["olefile"]
 audio-transcription = ["pydub", "SpeechRecognition"]
-youtube-transcription = ["youtube-transcript-api"]
+youtube-transcription = ["youtube-transcript-api", "yt-dlp"]
 az-doc-intel = ["azure-ai-documentintelligence", "azure-identity"]
+app = ["streamlit>=1.44,<2"]
+desktop-app = ["tkinterdnd2>=0.4.2"]
 
 [project.urls]
 Documentation = "https://github.com/microsoft/markitdown#readme"
@@ -69,6 +72,8 @@ path = "src/markitdown/__about__.py"
 
 [project.scripts]
 markitdown = "markitdown.__main__:main"
+markitdown-app = "markitdown.app:run"
+markitdown-desktop = "markitdown.desktop_app:main"
 
 [tool.hatch.envs.default]
 features = ["all"]

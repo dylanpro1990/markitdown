@@ -24,6 +24,12 @@ cd markitdown
 pip install -e packages/markitdown[all]
 ```
 
+To install the optional drag-and-drop app:
+
+```bash
+pip install -e packages/markitdown[all,app]
+```
+
 ## Usage
 
 ### Command-Line
@@ -31,6 +37,14 @@ pip install -e packages/markitdown[all]
 ```bash
 markitdown path-to-file.pdf > document.md
 ```
+
+### Local Drag-and-Drop App
+
+```bash
+markitdown-app
+```
+
+This launches a local browser app for drag-and-drop conversion and Markdown download.
 
 ### Python API
 
